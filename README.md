@@ -13,7 +13,7 @@
         
 
     
-##### 2. Clone this repository by using git clone.
+##### 2. Clone this repository by using git clone. https://github.com/NJIT-CS490/project1-svp62
 
 ##### 3. In your local copy of this repository, create a new root-level file called twiter.env
 
@@ -24,7 +24,7 @@ export CONSUMER_SECRET=' your keys'
 export ACCESS_TOKEN=' your keys '
 export ACCESS_TOKEN_SECRET=' your keys '**
 
-Save twiter.env and make sure you save it in the same directory as the project.py exist
+Save twiter.env and make sure you save it in the same directory as the twiter.py exist
 
 
 ##### 5. Run the following in your terminal:
@@ -57,7 +57,7 @@ pip3 install tweepy
 
 ##### 8. To run the Application 
 ```bash
-python project.py
+python twiter.py
 ```
 
 ##### 9. If on Cloud9, preview templates/index.html. This should successfully render the HTML!
