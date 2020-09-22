@@ -1,0 +1,27 @@
+<html> 
+<title>tweets</title>
+<head> 
+    <link rel="stylesheet" href={{ url_for('static', filename='style.css') }} />
+ 
+<body> 
+  <h1>Tweets related to {{stree}}</h1>
+ <ol>
+
+
+{%for i in range(0, lengthh)%} 
+     
+     <li>
+         {{username[i]}} <br></br>
+         {{tweeting_time[i]}}<br> </br>
+         {{tweet_content[i]}} <br></br>
+         
+     </li>
+     <br></br>
+        
+{%endfor%} 
+  
+
+ </ol> 
+</body>
+</head>
+</html> 
