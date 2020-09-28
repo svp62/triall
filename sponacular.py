@@ -102,7 +102,8 @@ def index():
             tweet_content.append(tweet.text)
             
             
-    return flask.render_template("index.html", title = title, image = image, prep = prep_time, serve = serve, source = source, len = len(ingredients), ingredients = ingredients)
+    return flask.render_template("index.html", title = title, image = image, prep = prep_time, serve = serve, source = source, len = len(ingredients), ingredients = ingredients, 
+                                    stree=random_word[0], username=str(username[0]), tweeting_time=str(tweeting_time[0]), tweet_content=str(tweet_content[0]))
 
 
 
