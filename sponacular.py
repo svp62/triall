@@ -43,7 +43,7 @@ def index():
 
     response_i = requests.get(image_url)
     json_body_i = response_i.json()
-    print(json_body_i)
+   
     image_i = (json.dumps(json_body_i["results"][0]["image"]))
     image = image_i.replace('"', '')
     
