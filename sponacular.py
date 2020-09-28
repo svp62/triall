@@ -73,15 +73,15 @@ def index():
         
         json_bod = respons.json()
         
-        b = (json.dumps(json_bod))
+        recipe_data = (json.dumps(json_bod))
         
-        y = json.loads(b)
+        recipe_data_PYconverted = json.loads(recipe_data)
         
-        x = y["extendedIngredients"]
+        recipe_list = recipe_data_PYconverted["extendedIngredients"]
         
         #print("\n\n")
         ingredients = []
-        for i in x:
+        for i in recipe_list:
             ingredients.append(i["original"])
             
         tweets = Cursor(auth_api.search,
