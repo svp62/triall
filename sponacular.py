@@ -83,6 +83,25 @@ def index():
             ingredients.append(i["original"])
             
             
+            
+        tweets = Cursor(auth_api.search,
+                      q=random_word,
+                      lang="en",
+                      since=tweets_from).items(1)
+                      
+                      
+        username=[]
+        tweeting_time=[]
+        tweet_content=[]
+        
+                      
+        for tweet in tweets:
+           
+            username.append(tweet.user.screen_name)
+            tweeting_time.append(tweet.created_at)
+            tweet_content.append(tweet.text)
+            
+            
     return flask.render_template("index.html", title = title, image = image, prep = prep_time, serve = serve, source = source, len = len(ingredients), ingredients = ingredients)
 
 
