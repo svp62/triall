@@ -77,7 +77,7 @@ def index():
         
         x = y["extendedIngredients"]
         
-        print("\n\n")
+        #print("\n\n")
         ingredients = []
         for i in x:
             ingredients.append(i["original"])
