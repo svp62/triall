@@ -11,3 +11,5 @@ from dotenv import load_dotenv
 import json
 import flask
 load_dotenv()
+
+app=flask.Flask(__name__)
