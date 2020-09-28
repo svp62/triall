@@ -1,17 +1,73 @@
-
+* {
+  
+  box-sizing: border-box;
+  
+}
 body {
-  background: white;
+  background: #f1f1f1;
   font-family: arial;
+  padding: 20px;
 }
 
-ol {
-   
-   font-size: 34px;
-   color: black;
+.header {
+  
+  padding: 30px;
+  font-size: 40px;
+  font-family: 'Alex Brush';
+  color: white;
+  text-align: center;
+  background: black;
+  
 }
-li {
-  background-color: beige;
-  font-size: 16px;
-  border-radius: 25px;
+
+
+.leftcolumn {
+  
+  float: left;
+  width: 75%;
+  
+}
+
+.rightcolumn {
+  
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+  
+}
+
+.card {
+  
+  background-color: white;
   padding: 20px;
+  margin-top: 20px;
+}
+
+.row:after {
+  
+  content: "";
+  display: table;
+  clear: both;
+  
+}
+
+.footer {
+ 
+  text-align: center;
+  background: #ddd;
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  
+  
+}
+
+@media screen and (max-width: 800px) {
+  
+  .leftcolumn, .rightcolumn {
+    
+    width: 100%;
+    padding: 0;
+    
+  }
 }

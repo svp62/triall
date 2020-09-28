@@ -2,39 +2,67 @@
 <title>spoonacular</title>
 <head> 
     <link rel="stylesheet" href={{ url_for('static', filename='style.css') }} />
- 
+    
+    <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+    
+<meta name="viewport" content="width=divice-width, initial-scale=1"> 
 <body> 
+
+<div class="header">
+    <h2>Welcome to food page</h2>
+</div>
   
  <ol>
      
      
-     <li>{{title}}<br></br>
+     <div class="row">
+         <div class="leftcolumn">
+             <div class="card">
+             <h1>Recipe for {{title}}</h1>
     
-    <img src= "{{image}}"><br><br>
+             <img src= "{{image}}"><br><br>
     
     
-    <p>Prepration Time: </p>{{prep}} <br><br>
-    <p>Serves: </p>{{serve}} <br><br>
-    <p>Source URL: </p><p><a href="{{source}}" target="_blank">{{source}}</a> </p><br><br>
-    <p>Ingredients:- </p> <br></br>
+                <p>Prepration Time: {{prep}} </p>
+                <p>Serves: {{serve}} </p>
+                <p>Source URL: <a href="{{source}}" target="_blank">{{source}}</a> </p>
+                
+                
+             </div>
+             
+        </div>
+    
+         <div class="rightcolumn">
+             <div class="card">       
+                <h3>Ingredients:- </h3> 
+            
+                <p>
+                {%for i in range(0, len)%} 
+                
+                  {{ingredients[i]}} <br></br>
+                     
+                 
+                    
+                {%endfor%} 
+                </p>
+                
+            </div>
+        </div>    
+    
+        </div>
 
-
-    {%for i in range(0, len)%} 
-    
-      {{ingredients[i]}} <br></br>
-         
-     <br></br>
-        
-    {%endfor%} 
+ </ol> 
+ 
+ <div class="footer">
+      <h2>Tweets related to {{stree}}</h2>
      
          {{username}} <br></br>
          {{tweeting_time}}<br> </br>
          {{tweet_content}} <br></br> 
-        
-    </li>
-
-
- </ol> 
+     
+</div>
+ 
+ 
 </body>
 </head>
 </html> 
