@@ -28,12 +28,6 @@ auth.set_access_token(access_token, access_token_secret)
 auth_api = API(auth, wait_on_rate_limit=True)
 
 
-
-
-
-
-
-
 @app.route('/')
 
 
