@@ -54,6 +54,45 @@ def index():
         
     else:
         a = (json.dumps(json_body))
+        
+        title = (json.dumps(json_body["results"][0]["title"]))
+        
+        prep_time = (json.dumps(json_body["results"][0]["readyInMinutes"]))
+        
+        serve = (json.dumps(json_body["results"][0]["servings"]))
+        
+        source = (json.dumps(json_body["results"][0]["sourceUrl"]))
+        
+        
+        print("the title is ", title)
+        
+        print("the prep time is ", prep_time)
+        
+        print("the serving size is ", serve)
+        
+        print("the original source is ", source)
+        
+        recipeID = (json.dumps(json_body["results"][0]["id"]))
+        
+        print("id number", recipeID)
+        
+        ingredients_url = "https://api.spoonacular.com/recipes/"+str(recipeID)+"/information?includeNutrition=false&apiKey={}".format(spoonacular_key)
+        
+        respons = requests.get(ingredients_url)
+        
+        json_bod = respons.json()
+        
+        
+        b = (json.dumps(json_bod))
+        
+        y = json.loads(b)
+        
+        x = y["extendedIngredients"]
+        
+        print("\n\n")
+        ingredients = []
+        for i in x:
+            ingredients.append(i["original"])
 
 
 
