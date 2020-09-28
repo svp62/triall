@@ -84,8 +84,6 @@ def index():
         for i in x:
             ingredients.append(i["original"])
             
-            
-            
         tweets = Cursor(auth_api.search,
                       q=random_word,
                       lang="en",
