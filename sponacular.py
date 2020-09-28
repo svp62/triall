@@ -39,23 +39,25 @@ def index():
     
     
     url = "https://api.spoonacular.com/recipes/search?query="+str(random_word)+"&number=1&apiKey={}".format(spoonacular_key)
-    image_url = "https://api.spoonacular.com/recipes/complexSearch?query="+str(random_word[0])+"&number=1&apiKey={}".format(spoonacular_key)
-
-    response_i = requests.get(image_url)
-    json_body_i = response_i.json()
    
-    image_i = (json.dumps(json_body_i["results"][0]["image"]))
-    image = image_i.replace('"', '')
     
     response = requests.get(url)
     json_body = response.json()
     
     
     if json_body["totalResults"] == 0:
-        print("recipes not found with {}".format(random_word[0]) )
+        empty_data = print("recipes not found with {}".format(random_word[0]) )
         
     else:
         a = (json.dumps(json_body))
+        
+        image_url = "https://api.spoonacular.com/recipes/complexSearch?query="+str(random_word[0])+"&number=1&apiKey={}".format(spoonacular_key)
+
+        response_i = requests.get(image_url)
+        json_body_i = response_i.json()
+   
+        image_i = (json.dumps(json_body_i["results"][0]["image"]))
+        image = image_i.replace('"', '')
         
         title = (json.dumps(json_body["results"][0]["title"]))
         
@@ -68,6 +70,7 @@ def index():
         source = source_i.replace('"', '')
         
         recipeID = (json.dumps(json_body["results"][0]["id"]))
+        
         
         ingredients_url = "https://api.spoonacular.com/recipes/"+str(recipeID)+"/information?includeNutrition=false&apiKey={}".format(spoonacular_key)
         
@@ -104,7 +107,7 @@ def index():
             tweet_content.append(tweet.text)
             
             
-    return flask.render_template("index.html", title = title, image = image, prep = prep_time, serve = serve, source = source, len = len(ingredients), ingredients = ingredients, 
+    return flask.render_template("index.html", image = image, title = title, prep = prep_time, serve = serve, source = source, len = len(ingredients), ingredients = ingredients, 
                                     stree=random_word[0], username=str(username[0]), tweeting_time=str(tweeting_time[0]), tweet_content=str(tweet_content[0]))
 
 
