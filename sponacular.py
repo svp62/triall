@@ -35,6 +35,8 @@ def index():
     
     Hashtags = ["cheese", "beef", "crepes", "cake", "fish", "lasagne", "ravioli", "shrimp", "bread", "meatball", "burger", "pasta", "chicken"]
     random_word=(random.choices(Hashtags))
+    tweets_from = "2020-01-11"
+    
     
     url = "https://api.spoonacular.com/recipes/search?query="+str(random_word)+"&number=1&apiKey={}".format(spoonacular_key)
     image_url = "https://api.spoonacular.com/recipes/complexSearch?query="+str(random_word[0])+"&number=1&apiKey={}".format(spoonacular_key)
