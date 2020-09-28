@@ -63,7 +63,9 @@ def index():
         
         serve = (json.dumps(json_body["results"][0]["servings"]))
         
-        source = (json.dumps(json_body["results"][0]["sourceUrl"]))
+        source_i = (json.dumps(json_body["results"][0]["sourceUrl"]))
+        
+        source = source_i.replace('"', '')
         
         recipeID = (json.dumps(json_body["results"][0]["id"]))
         
