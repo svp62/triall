@@ -13,3 +13,13 @@ import flask
 load_dotenv()
 
 app=flask.Flask(__name__)
+
+
+
+
+
+
+
+
+
+@app.route('/')
