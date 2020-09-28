@@ -4,13 +4,26 @@
     <link rel="stylesheet" href={{ url_for('static', filename='style.css') }} />
  
 <body> 
-  <h1>Tweets related to {{stree}}</h1>
+  
  <ol>
+     
+     
+     <li>{{title}}<br></br>
+    
+    <img src= "{{image}}"><br><br>
 
 
 {%for i in range(0, lengthh)%} 
      
      <li>
+         
+         
+         
+         
+         
+         
+         
+         <h1>Tweets related to {{stree}}</h1>
          {{username[i]}} <br></br>
          {{tweeting_time[i]}}<br> </br>
          {{tweet_content[i]}} <br></br>
