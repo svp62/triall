@@ -32,6 +32,28 @@ auth_api = API(auth, wait_on_rate_limit=True)
 
 
 def index():
+    
+    Hashtags = ["cheese", "beef", "crepes", "cake", "fish", "lasagne", "ravioli", "shrimp", "bread", "meatball", "burger", "pasta", "chicken"]
+    random_word=(random.choices(Hashtags))
+    
+    url = "https://api.spoonacular.com/recipes/search?query="+str(random_word)+"&number=1&apiKey={}".format(spoonacular_key)
+    image_url = "https://api.spoonacular.com/recipes/complexSearch?query="+str(random_word[0])+"&number=1&apiKey={}".format(spoonacular_key)
+
+    response_i = requests.get(image_url)
+    json_body_i = response_i.json()
+    print(json_body_i)
+    image_i = (json.dumps(json_body_i["results"][0]["image"]))
+    image = image_i.replace('"', '')
+    
+    response = requests.get(url)
+    json_body = response.json()
+    
+    
+    if json_body["totalResults"] == 0:
+        print("recipes not found with {}".format(random_word[0]) )
+        
+    else:
+        a = (json.dumps(json_body))
 
 
 
