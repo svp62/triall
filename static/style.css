@@ -1,6 +1,6 @@
 
 body {
-  background: linear-gradient(lightblue, pink);
+  background: white;
   font-family: arial;
 }
 
@@ -10,7 +10,7 @@ ol {
    color: black;
 }
 li {
-  background-color: lightcoral;
+  background-color: beige;
   font-size: 16px;
   border-radius: 25px;
   padding: 20px;
