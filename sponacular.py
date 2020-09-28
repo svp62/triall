@@ -81,6 +81,9 @@ def index():
         ingredients = []
         for i in x:
             ingredients.append(i["original"])
+            
+            
+    return flask.render_template("index.html", title = title, image = image, prep = prep_time, serve = serve, source = source, len = len(ingredients), ingredients = ingredients)
 
 
 
