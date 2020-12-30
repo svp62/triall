@@ -1,3 +1,8 @@
+'''app'''
+# pylint: disable=C0303
+# pylint: disable=C0301
+# pylint: disable=C0116
+# pylint: disable=C0411
 from tweepy import OAuthHandler
 from tweepy import API
 from tweepy import Cursor
@@ -46,7 +51,9 @@ def index():
     
     
     if json_body["totalResults"] == 0:
-        empty_data = print("recipes not found with {}".format(random_word[0]) )
+        empty_data = print("recipes not found with {}".format(random_word[0]))
+        empty_handler = str(random_word[0])
+        return flask.render_template("error.html", empty_handler=empty_handler)
         
     else:
         a = (json.dumps(json_body))
@@ -107,7 +114,7 @@ def index():
             tweet_content.append(tweet.text)
             
             
-    return flask.render_template("index.html", image = image, title = title, prep = prep_time, serve = serve, source = source, len = len(ingredients), ingredients = ingredients, 
+        return flask.render_template("index.html", image = image, title = title, prep = prep_time, serve = serve, source = source, len = len(ingredients), ingredients = ingredients, 
                                     stree=random_word[0], username=str(username[0]), tweeting_time=str(tweeting_time[0]), tweet_content=str(tweet_content[0]))
 
 
